@@ -16,7 +16,6 @@
     <% @songs.each do |song| %>
       <tr>
         <td><%= song.title %></td>
-        <td><%= song.lyrics %></td>
         <td><%= song.band_id %></td>
         <td><%= link_to 'Show', song %></td>
         <% if current_user.id == 1 %>
