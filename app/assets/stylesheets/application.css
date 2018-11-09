@@ -27,3 +27,12 @@
 .yield{
   margin-top: 70px;
 }
+.flexrow{
+  display: flex;
+}
+.w50{
+  width: 50%:
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}

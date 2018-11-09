@@ -1,21 +1,28 @@
 <p id="notice"><%= notice %></p>
+<div class="flexrow">
+  <div class="container-fluid w50">
+    <p>
+      <strong>Name:</strong>
+      <%= @band.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @band.name %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @band.user_id %>
-</p>
-<p><strong>Songs:</strong></p>
-
-<% @songs.each do |song|%>
-  <% if song.band_id == @band.id %>
+    <p>
+      <strong>User:</strong>
+      <%= @band.user_id %>
+    </p>
+    <p>
+      <strong>Songs:</strong>
+    </p>
+    <% @songs.each do |song|%>
+    <% if song.band_id == @band.id %>
     <%= song.title %>
-  <% end %>
-<% end %>
+    <% end %>
+    <% end %>
+  </div>
+  <div class="container-fluid w50">
+    <img src="<%= @band.src %>" alt="logo">
+  </div>
+</div>
 <br><br>
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
