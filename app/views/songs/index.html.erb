@@ -19,13 +19,18 @@
         <td><%= song.lyrics %></td>
         <td><%= song.band_id %></td>
         <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.id == 1 %>
+          <td><%= link_to 'Edit', edit_song_path(song) %></td>
+          <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<% if current_user.id == 1 %>
+  <%= link_to 'New Song', new_song_path %>
+<% end %>
 
-<%= link_to 'New Song', new_song_path %>
+<%= link_to 'Bands', bands_path %>

@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  
+
   # GET /bands
   # GET /bands.json
   def index
@@ -11,6 +11,8 @@ class BandsController < ApplicationController
   # GET /bands/1
   # GET /bands/1.json
   def show
+    @band = Band.find(params[:id])
+    @songs = Song.all
   end
 
   # GET /bands/new

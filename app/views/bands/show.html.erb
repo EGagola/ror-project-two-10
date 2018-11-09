@@ -9,6 +9,13 @@
   <strong>User:</strong>
   <%= @band.user_id %>
 </p>
+<p><strong>Songs:</strong></p>
 
+<% @songs.each do |song|%>
+  <% if song.band_id == @band.id %>
+    <%= song.title %>
+  <% end %>
+<% end %>
+<br><br>
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>

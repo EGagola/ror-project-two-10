@@ -1,6 +1,10 @@
-<h1>Editing Band</h1>
+<% if current_user.id == 1 %>
+  <h1>Editing Band</h1>
 
-<%= render 'form', band: @band %>
+  <%= render 'form', band: @band %>
 
-<%= link_to 'Show', @band %> |
-<%= link_to 'Back', bands_path %>
+  <%= link_to 'Show', @band %> |
+  <%= link_to 'Back', bands_path %>
+<% else %>
+  <%= render file: "#{Rails.root}/public/422", status: :in_development %>
+<% end %>

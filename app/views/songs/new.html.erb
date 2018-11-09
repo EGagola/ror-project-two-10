@@ -1,5 +1,9 @@
-<h1>New Song</h1>
+<% if current_user.id == 1 %>
+  <h1>New Song</h1>
 
-<%= render 'form', song: @song %>
+  <%= render 'form', song: @song %>
 
-<%= link_to 'Back', songs_path %>
+  <%= link_to 'Back', songs_path %>
+<% else %>
+  <%= render file: "#{Rails.root}/public/422", status: :in_development %>
+<% end %>
