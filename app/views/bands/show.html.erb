@@ -15,7 +15,10 @@
     </p>
     <% @songs.each do |song|%>
     <% if song.band_id == @band.id %>
-    <%= song.title %><br>
+    <%= song.title %>
+    -
+    <%= song.album %>
+    <br>
     <% end %>
     <% end %>
   </div>
