@@ -14,7 +14,7 @@
   <tbody>
     <% @bands.each do |band| %>
       <tr>
-        <td><%= band.name %></td>
+        <td class="name"><%= band.name %></td>
         <td><%= band.user_id %></td>
         <td><%= link_to 'Show', band %></td>
         <% if current_user.id == 1 %>
