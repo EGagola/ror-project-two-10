@@ -15,7 +15,7 @@
     </p>
     <% @songs.each do |song|%>
     <% if song.band_id == @band.id %>
-    <%= song.title %>
+    <%= song.title %><br>
     <% end %>
     <% end %>
   </div>
